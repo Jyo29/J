@@ -25,42 +25,7 @@ $(document).ready(function(){
     $('.menu-btn i').toggleClass('active');//when clicked on menu button, it flips to x 
     });
 
-    //typing animation script
-
-    /*var typed = new Typed(".typing",{
-        strings: ['Web Developer','Coder','Infrastructure Engineer','Servicenow Developer' ],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
-
-    var typed = new Typed(".typing-2",{
-        strings: ['Web Developer','Coder','Infrastructure Engineer','Servicenow Developer' ],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
-//owl carousel script
-    $('.carousel').owlCarousel({
-        margin: 20,
-        loop: true,
-        autoplayTimeOut: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-            0:{
-                items: 1,
-                nav: false
-            },
-            600:{
-                items:2,
-                nav: flase
-            },
-            1000:{
-                items:3,
-                nav: false
-            }
-        }
-    });*/
+  
 
     let mousecursor = document.querySelector('.cursor');
     let navlinks = document.querySelector('.navbar .menu li');

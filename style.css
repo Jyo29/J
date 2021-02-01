@@ -1,0 +1,544 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px; /*keeps portfolio and menu on left-right*/
+  margin: auto;
+}
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.link-grow {
+  transform: scale(2);
+  background: black;
+}
+
+.about,
+.services {
+  font-family: "Poppins", sans-serif;
+  background-color: indianred;
+}
+.about .about-content,
+.services .serv-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+section {
+  padding: 100px;
+}
+section .title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  color: indianred;
+  padding-bottom: 20px; /*margin,padding- distance between photo and title*/
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+}
+section .title::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 3px;
+  background: black; /*heading underline color*/
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section .title::after {
+  position: absolute;
+  background: whitesmoke;
+  bottom: -12px; /*line size parallere to words*/
+  left: 50%;
+  color: yellowgreen;
+  font-size: 20px;
+  padding: 5px;
+  transform: translateX(-50%);
+}
+/*navbar styling*/
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 999; /*when scrolling the about me goes under navbar*/
+  background: none;
+  font-family: "Ubuntu", sans-serif;
+  padding: 30px 0;
+  transition: all 0.3s ease; /*scroll up-down transition smooth on navbar*/
+}
+.navbar.sticky {
+  padding: 5px 0;
+  background: yellowgreen;
+}
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /*keeps space between portfolio and menu items*/
+}
+.navbar .logo a {
+  color: indianred;
+  font-size: 25px;
+  font-weight: 500;
+}
+.navbar .logo a span {
+  color: yellowgreen;
+  transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span {
+  color: yellowgreen;
+}
+.navbar .menu li {
+  list-style: none;
+  display: inline-block; /*horizontal display of menu*/
+}
+.navbar .menu li a {
+  display: block;
+  color: indianred;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px; /*space between menu items*/
+  transition: color 0.3s ease; /*color transition time when hover*/
+}
+.navbar .menu li a:hover {
+  color: yellowgreen;
+}
+.navbar.sticky .menu li a:hover {
+  color: whitesmoke; /*keeps the menu color same after hover when navbar changes color to free on scroll*/
+}
+/*Menu button styling*/
+.menu-btn {
+  color: yellowgreen;
+  font-size: 23px;
+  cursor: pointer;
+  display: none; /*not to show menu button*/
+}
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: indianred;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: yellowgreen;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+/*Home section styling*/
+.home {
+  display: flex;
+  background: whitesmoke;
+  height: 100vh;
+  color: indianred;
+  min-height: 500px;
+  font-family: "Ubuntu", sans-serif;
+}
+.home .max-width {
+  margin: auto 0 auto 40px; /*kepps the text in the left position*/
+}
+
+.home .home-content .text-1 {
+  font-size: 27px;
+  background: #fc0142, #fbd786;
+  /*--webkit-background-clip: text;
+  --webkit-text-fill-color: transparent;*/
+}
+.home .home-content .text-2 {
+  font-size: 50px;
+  font-weight: 600;
+  margin-left: -3px;
+  background: #fc0142, #fbd786;
+}
+.home .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+  background: #fc0142, #fbd786;
+}
+.home .home-content .text-3 span {
+  color: yellowgreen;
+  font-weight: 500;
+  background: #fc0142, #fbd786;
+}
+.home .home-content p {
+  margin-top: 10rem;
+  font-size: 20px;
+  margin: 5px 0;
+  background: #fc0142, #fbd786;
+}
+
+.home .home-content a:hover {
+  color: indianred;
+  background: none;
+}
+
+.icons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icons ul {
+  display: flex;
+}
+
+.icons ul li {
+  position: relative;
+  display: block;
+  color: #666;
+  font-size: 20px;
+  height: 60px;
+  width: 60px;
+  background: indianred;
+  line-height: 60px;
+  border-radius: 50%;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.icons a {
+  color: yellowgreen;
+}
+
+.icons ul li:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  /*background: #d34500;*/
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+.icons ul li:hover:before {
+  transform: scale(1.2);
+  filter: blur(3px);
+  transform: scale(1.2);
+  /*box-shadow: 0 0 15px #d35400;*/
+}
+
+.icons ul li:nth-child(2):hover {
+  color: #c3cbd4;
+  box-shadow: 0 0 15px whitesmoke;
+  text-shadow: 0 0 15px whitesmoke;
+}
+.icons ul li:nth-child(1):hover {
+  color: #4b94e7;
+  box-shadow: 0 0 15px #007bb6;
+  text-shadow: 0 0 15px #007bb6;
+}
+.icons ui li:nth-child(2):before {
+  background: whitesmoke;
+}
+
+.icons ul li:nth-child(2):hover:before {
+  box-shadow: 0 0 15px rgb(23, 221, 195);
+}
+
+.icons ui li:nth-child(1):before {
+  background: #007bb6;
+}
+.icons ul li:nth-child(1):hover:before {
+  box-shadow: 0 0 15px #007bb6;
+}
+
+.icons ui li:nth-child(3):before {
+  background: whitesmoke;
+}
+.icons ul li:nth-child(3):hover:before {
+  box-shadow: 0 0 15px black;
+}
+
+body .icons {
+  text-align: center;
+}
+
+/*About section start*/
+.about {
+  background: whitesmoke;
+}
+.about .title::after {
+  content: "Who i am";
+}
+
+.about .about-content .left {
+  width: 45%;
+}
+
+.about .about-content .right .text {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.about .about-content .right .text span {
+  color: yellowgreen;
+}
+
+.about .about-content .right .p {
+  text-align: center; /*make alignment (space) of text from right*/
+  color: whitesmoke;
+}
+.about .about-content .right a {
+  display: inline-block;
+  background: whitesmoke;
+  color: yellowgreen;
+  font-size: 20px;
+  padding: none;
+  margin-top: 20px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  transition: all 0.3s ease;
+}
+.about .about-content .right a:hover {
+  color: indianred;
+  background: none;
+}
+
+/*About section end*/
+
+/*services section start*/
+.services {
+  background: #262626;
+}
+
+.services,
+.teams {
+  color: yellowgreen;
+  background: #1111;
+}
+.services .title::before,
+.teams .title::before {
+  background: #fff;
+}
+.services .title::after,
+.teams .title::after {
+  background: whitesmoke;
+  content: "what i provide";
+}
+.services .serv-content .card {
+  width: calc(
+    33% - 20px
+  ); /*this will keep advertising to the side from bottom*/
+  background: #222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.services .serv-content .card:hover {
+  background: indianred;
+}
+.services .serv-content .card i {
+  font-size: 50px;
+  color: indianred;
+  transition: color 0.3s ease;
+}
+.services .serv-content .card:hover i {
+  color: yellowgreen;
+}
+.services .serv-content .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  background: #fc0142, #fbd786;
+}
+.services .serv-content .card .box {
+  transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box {
+  transform: scale(1.05);
+}
+
+.card .box .btn a {
+  color: yellowgreen;
+  font-size: 23px;
+  cursor: pointer;
+  display: none; /*not to show menu button*/
+}
+
+/*Contact section styling*/
+.contact {
+  background: whitesmoke;
+}
+.contact .title::after {
+  content: "get in touch";
+}
+
+.contact .contact-content .text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.contact .contact-content .left p {
+  text-align: justify;
+}
+.contact .contact-content .left .icons {
+  margin: 10px 0;
+}
+.contact .contact-content .row {
+  display: flex;
+  height: 65px;
+  align-items: center;
+}
+.contact .contact-content .row .info {
+  margin-left: 30px; /*margin between name and icons*/
+}
+.contact .contact-content .row i {
+  font-size: 25px;
+  color: yellowgreen;
+}
+.contact .contact-content .info .head {
+  font-weight: 500;
+}
+.contact .contact-content .info .sub-title {
+  color: #333;
+}
+.contact .right form .fields {
+  display: flex;
+}
+
+/*responsive media query start*/
+@media (max-width: 1104px) {
+  .about .about-content .left img {
+    /*Adjust image when taking to ipad size*/
+    height: 350px;
+    width: 350px;
+  }
+  /* .home .max-width {
+    margin-left: 0px; /*keep the margin of portfolio and name same from left end
+  }*/
+}
+@media (max-width: 1300px) {
+  .max-width {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 991px) {
+  .max-width {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 947px) {
+  .max-width {
+    padding: 0 50px; /*reduces the padding from left-right outerside when size minimised to 947px*/
+  }
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+  .menu-btn i.active:before {
+    content: "\f00d";
+  }
+
+  .navbar .menu {
+    position: fixed; /*keeps the position fixed of menu with given background color*/
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    background: yellowgreen;
+    text-align: center;
+    padding-top: 80px; /*keeps distance from top*/
+    transition: all 0.3s ease;
+  }
+  .navbar .menu.active {
+    left: 0%;
+  }
+  .navbar .menu li {
+    display: block;
+  }
+  .navbar .menu li a {
+    display: inline-block; /*displayes the menu vertically for tablet size*/
+    margin: 20px 0; /*keeps the distance between menu options*/
+    font-size: 25px;
+  }
+  .home .home-content .text-2 {
+    font-size: 70px;
+  }
+  .home .home-content .text-3 {
+    font-size: 35px;
+  }
+  .home .home-content a {
+    font-size: 23px;
+    padding: 10px 30px;
+  }
+  .max-width {
+    max-width: 800px;
+  }
+  /*given column,left , right will adjust photo and paragraph text when in ipad and mobile size*/
+  .about .about-content .column {
+    width: 100%; /*will not overlap text and photo when in ipad size*/
+  }
+  .about .about-content .left {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+  }
+  .about .about-content .right {
+    flex: 100%;
+  }
+  .services .serv-content .card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 690px) {
+  .home .home-content .text-2 {
+    font-size: 60px;
+  }
+  .home .home-content .text-3 {
+    font-size: 32px;
+  }
+  .max-width {
+    padding: 0 23px;
+  }
+  .home .home-content a {
+    font-size: 20px;
+    /*padding: 9px 25px;*/
+  }
+  .services .serv-content .card {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .home .home-content .text-2 {
+    font-size: 50px;
+  }
+  .home .home-content .text-3 {
+    font-size: 27px;
+  }
+}
